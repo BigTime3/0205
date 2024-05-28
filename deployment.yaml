@@ -1,105 +1,59 @@
 kind: Deployment
 apiVersion: apps/v1
 metadata:
-  name: nginx
+  name: nginx-release-2
   namespace: default
-  uid: 3375d90c-ca33-4dab-897a-9c7d0696947e
-  resourceVersion: '351479979'
-  generation: 2
-  creationTimestamp: '2024-05-27T08:40:56Z'
+  uid: 834029ab-4cbd-4bcf-9f48-4f7d74cd9bb2
+  resourceVersion: '351468604'
+  generation: 1
+  creationTimestamp: '2024-05-28T01:41:10Z'
   labels:
-    app: nginx
+    app: nginx-release-2
   annotations:
-    asm/put: ''
-    asm/updateTimestamp: '2024-05-27T11:20:03Z'
-    deployment.kubernetes.io/revision: '2'
+    deployment.kubernetes.io/revision: '1'
   managedFields:
     - manager: fabric8
       operation: Apply
       apiVersion: apps/v1
-      time: '2024-05-27T08:40:56Z'
+      time: '2024-05-28T01:41:10Z'
       fieldsType: FieldsV1
       fieldsV1:
         'f:metadata':
-          'f:annotations':
-            'f:asm/put': {}
-            'f:asm/updateTimestamp': {}
-            'f:deployment.kubernetes.io/revision': {}
           'f:labels':
             'f:app': {}
         'f:spec':
           'f:minReadySeconds': {}
           'f:progressDeadlineSeconds': {}
           'f:replicas': {}
-          'f:revisionHistoryLimit': {}
           'f:selector': {}
           'f:strategy':
             'f:rollingUpdate':
               'f:maxSurge': {}
               'f:maxUnavailable': {}
-            'f:type': {}
           'f:template':
             'f:metadata':
-              'f:annotations':
-                'f:asm/updateTimestamp': {}
               'f:labels':
                 'f:app': {}
             'f:spec':
               'f:containers':
-                'k:{"name":"nginx"}':
+                'k:{"name":"nginx-release-2"}':
                   .: {}
                   'f:image': {}
                   'f:imagePullPolicy': {}
                   'f:livenessProbe':
-                    'f:failureThreshold': {}
-                    'f:periodSeconds': {}
-                    'f:successThreshold': {}
                     'f:tcpSocket':
                       'f:port': {}
-                    'f:timeoutSeconds': {}
                   'f:name': {}
                   'f:readinessProbe':
-                    'f:failureThreshold': {}
-                    'f:periodSeconds': {}
-                    'f:successThreshold': {}
                     'f:tcpSocket':
                       'f:port': {}
-                    'f:timeoutSeconds': {}
-                  'f:resources': {}
                   'f:startupProbe':
-                    'f:failureThreshold': {}
-                    'f:periodSeconds': {}
-                    'f:successThreshold': {}
                     'f:tcpSocket':
                       'f:port': {}
-                    'f:timeoutSeconds': {}
-                  'f:terminationMessagePath': {}
-                  'f:terminationMessagePolicy': {}
-              'f:dnsPolicy': {}
-              'f:restartPolicy': {}
-              'f:schedulerName': {}
-              'f:securityContext': {}
-              'f:terminationGracePeriodSeconds': {}
-    - manager: cfe-apiserver
-      operation: Update
-      apiVersion: apps/v1
-      time: '2024-05-27T11:20:03Z'
-      fieldsType: FieldsV1
-      fieldsV1:
-        'f:metadata':
-          'f:annotations':
-            'f:asm/put': {}
-            'f:asm/updateTimestamp': {}
-        'f:spec':
-          'f:template':
-            'f:metadata':
-              'f:annotations':
-                .: {}
-                'f:asm/updateTimestamp': {}
     - manager: kube-controller-manager
       operation: Update
       apiVersion: apps/v1
-      time: '2024-05-27T11:20:24Z'
+      time: '2024-05-28T01:41:31Z'
       fieldsType: FieldsV1
       fieldsV1:
         'f:metadata':
@@ -135,17 +89,15 @@ spec:
   replicas: 1
   selector:
     matchLabels:
-      app: my-nginx
+      app: nginx-release-2
   template:
     metadata:
       creationTimestamp: null
       labels:
-        app: my-nginx
-      annotations:
-        asm/updateTimestamp: '2024-05-27T11:20:03Z'
+        app: nginx-release-2
     spec:
       containers:
-        - name: nginx
+        - name: nginx-release-2
           image: nginx
           resources: {}
           livenessProbe:
@@ -186,7 +138,7 @@ spec:
   revisionHistoryLimit: 10
   progressDeadlineSeconds: 60
 status:
-  observedGeneration: 2
+  observedGeneration: 1
   replicas: 1
   updatedReplicas: 1
   readyReplicas: 1
@@ -194,13 +146,13 @@ status:
   conditions:
     - type: Available
       status: 'True'
-      lastUpdateTime: '2024-05-27T11:20:24Z'
-      lastTransitionTime: '2024-05-27T11:20:24Z'
+      lastUpdateTime: '2024-05-28T01:41:31Z'
+      lastTransitionTime: '2024-05-28T01:41:31Z'
       reason: MinimumReplicasAvailable
       message: Deployment has minimum availability.
     - type: Progressing
       status: 'True'
-      lastUpdateTime: '2024-05-27T11:20:24Z'
-      lastTransitionTime: '2024-05-27T11:20:03Z'
+      lastUpdateTime: '2024-05-28T01:41:31Z'
+      lastTransitionTime: '2024-05-28T01:41:10Z'
       reason: NewReplicaSetAvailable
-      message: ReplicaSet "nginx-cc9968685" has successfully progressed.
+      message: ReplicaSet "nginx-release-2-548d8d586f" has successfully progressed.
