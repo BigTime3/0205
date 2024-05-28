@@ -4,7 +4,7 @@ metadata:
   name: nginx-release
   namespace: default
   uid: 4cd88589-e87b-4c66-bd32-6a15cdc3f7dd
-  resourceVersion: '243466455'
+  resourceVersion: '244073408'
   generation: 1
   creationTimestamp: '2024-05-27T09:10:04Z'
   labels:
@@ -19,17 +19,21 @@ metadata:
       fieldsType: FieldsV1
       fieldsV1:
         'f:metadata':
+          'f:annotations':
+            'f:deployment.kubernetes.io/revision': {}
           'f:labels':
             'f:app': {}
         'f:spec':
           'f:minReadySeconds': {}
           'f:progressDeadlineSeconds': {}
           'f:replicas': {}
+          'f:revisionHistoryLimit': {}
           'f:selector': {}
           'f:strategy':
             'f:rollingUpdate':
               'f:maxSurge': {}
               'f:maxUnavailable': {}
+            'f:type': {}
           'f:template':
             'f:metadata':
               'f:labels':
@@ -41,15 +45,35 @@ metadata:
                   'f:image': {}
                   'f:imagePullPolicy': {}
                   'f:livenessProbe':
+                    'f:failureThreshold': {}
+                    'f:periodSeconds': {}
+                    'f:successThreshold': {}
                     'f:tcpSocket':
                       'f:port': {}
+                    'f:timeoutSeconds': {}
                   'f:name': {}
                   'f:readinessProbe':
+                    'f:failureThreshold': {}
+                    'f:periodSeconds': {}
+                    'f:successThreshold': {}
                     'f:tcpSocket':
                       'f:port': {}
+                    'f:timeoutSeconds': {}
+                  'f:resources': {}
                   'f:startupProbe':
+                    'f:failureThreshold': {}
+                    'f:periodSeconds': {}
+                    'f:successThreshold': {}
                     'f:tcpSocket':
                       'f:port': {}
+                    'f:timeoutSeconds': {}
+                  'f:terminationMessagePath': {}
+                  'f:terminationMessagePolicy': {}
+              'f:dnsPolicy': {}
+              'f:restartPolicy': {}
+              'f:schedulerName': {}
+              'f:securityContext': {}
+              'f:terminationGracePeriodSeconds': {}
     - manager: kube-controller-manager
       operation: Update
       apiVersion: apps/v1
