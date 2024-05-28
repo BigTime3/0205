@@ -4,7 +4,7 @@ metadata:
   name: nginx
   namespace: default
   uid: 3375d90c-ca33-4dab-897a-9c7d0696947e
-  resourceVersion: '351106136'
+  resourceVersion: '351479979'
   generation: 2
   creationTimestamp: '2024-05-27T08:40:56Z'
   labels:
@@ -21,19 +21,27 @@ metadata:
       fieldsType: FieldsV1
       fieldsV1:
         'f:metadata':
+          'f:annotations':
+            'f:asm/put': {}
+            'f:asm/updateTimestamp': {}
+            'f:deployment.kubernetes.io/revision': {}
           'f:labels':
             'f:app': {}
         'f:spec':
           'f:minReadySeconds': {}
           'f:progressDeadlineSeconds': {}
           'f:replicas': {}
+          'f:revisionHistoryLimit': {}
           'f:selector': {}
           'f:strategy':
             'f:rollingUpdate':
               'f:maxSurge': {}
               'f:maxUnavailable': {}
+            'f:type': {}
           'f:template':
             'f:metadata':
+              'f:annotations':
+                'f:asm/updateTimestamp': {}
               'f:labels':
                 'f:app': {}
             'f:spec':
@@ -43,15 +51,35 @@ metadata:
                   'f:image': {}
                   'f:imagePullPolicy': {}
                   'f:livenessProbe':
+                    'f:failureThreshold': {}
+                    'f:periodSeconds': {}
+                    'f:successThreshold': {}
                     'f:tcpSocket':
                       'f:port': {}
+                    'f:timeoutSeconds': {}
                   'f:name': {}
                   'f:readinessProbe':
+                    'f:failureThreshold': {}
+                    'f:periodSeconds': {}
+                    'f:successThreshold': {}
                     'f:tcpSocket':
                       'f:port': {}
+                    'f:timeoutSeconds': {}
+                  'f:resources': {}
                   'f:startupProbe':
+                    'f:failureThreshold': {}
+                    'f:periodSeconds': {}
+                    'f:successThreshold': {}
                     'f:tcpSocket':
                       'f:port': {}
+                    'f:timeoutSeconds': {}
+                  'f:terminationMessagePath': {}
+                  'f:terminationMessagePolicy': {}
+              'f:dnsPolicy': {}
+              'f:restartPolicy': {}
+              'f:schedulerName': {}
+              'f:securityContext': {}
+              'f:terminationGracePeriodSeconds': {}
     - manager: cfe-apiserver
       operation: Update
       apiVersion: apps/v1
